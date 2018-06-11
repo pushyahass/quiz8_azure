@@ -38,11 +38,23 @@ for row in reader:
     cur.execute("INSERT INTO earthquake (time1, latitude,longitude,depth,mag,magType,nst,gap,dmin,rms,id,place,depthError,magError,magnst,locationsource) VALUES (?, ?, ?,? ,? ,?,?,?,?,?,?,?,?,?,?,?);", to_db)
 conn.commit()
 
-@app.route("/edata", methods=['POST'])
-def edata():
 
-    cur.execute("select * from earthquake")
-    rows= cur.fetchall()
-    return render_template("success.html",row=rows)
+@app.route("/gap_range", methods=['POST'])
+def gap_range():
+    from_gap = request.form['from_gap']
+    to_gap = request.form['to_gap']
+    cur.execute("select count(*) from earthquake WHERE gap>= ? and gap <= ? ",(from_gap,to_gap,))
+    inside= cur.fetchall()
+    inside.append(inside)
+    cur.execute("select count(*) from earthquake WHERE gap< ?", (from_gap,))
+    below = cur.fetchall()
+    inside.append(below)
+    cur.execute("select count(*) from earthquake WHERE gap> ?", (to_gap,))
+    above=cur.fetchall()
+    inside.append(above)
+
+    return render_template("gap.html",row=inside)
+
+
 if __name__ == '__main__':
     app.run()

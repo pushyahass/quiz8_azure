@@ -13,9 +13,15 @@ UPLOAD FILE:
     <input type="submit" value="Upload File">
 </form>
 <br><br>
-<form id="edata" action="{{ url_for('edata') }}" method="POST" enctype="multipart/form-data" >
- <input type="submit" name="edata" accept="text/csv/image" multiple>
+
+<br><br>
+<form id="gap_range" action="{{ url_for('gap_range') }}" method="POST" enctype="multipart/form-data" >
+    Retrieve earthquakes of gap from
+    <input type="text" name="from_gap" accept="text" > To: <input type="text" name="to_gap" accept="text" ><br>
+
+    <input type="submit" value="Retrieve Gap">
 </form>
+<br><br>
 <br><br>
 </body>
 </html>
