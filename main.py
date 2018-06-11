@@ -56,5 +56,14 @@ def gap_range():
     return render_template("gap.html",row=inside)
 
 
+@app.route("/location", methods=['POST'])
+def location():
+    loc = request.form['loc']
+    mag = request.form['mag']
+
+    cur.execute("select time1,latitude,longitude from earthquake WHERE mag>= ? and locationsource =? ", (mag, loc,))
+    locs = cur.fetchall()
+    return render_template("location.html",row=locs)
+
 if __name__ == '__main__':
     app.run()
