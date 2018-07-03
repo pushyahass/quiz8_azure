@@ -13,9 +13,9 @@ def index():
 def traffic():
 
     # url = "http://quiz8-env.3ftfvmwv4e.us-east-2.elasticbeanstalk.com/"
-    for i in range(0, 1500):
+    for i in range(0, 1000):
         # subprocess.urllib.urlopen("http://quiz8-env.3ftfvmwv4e.us-east-2.elasticbeanstalk.com/")
-        urllib.request.urlopen("http://18.191.147.241/show")
+        urllib.request.urlopen("http://quiz8-env.3ftfvmwv4e.us-east-2.elasticbeanstalk.com/")
         # subprocess.Popen("http://quiz8-env.3ftfvmwv4e.us-east-2.elasticbeanstalk.com/", shell=True)
         # subprocess.Popen(['python3', '-u', '-m', "http://quiz8-env.3ftfvmwv4e.us-east-2.elasticbeanstalk.com/"], stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
     return render_template("traffic.html")
