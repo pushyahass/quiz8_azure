@@ -2,35 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Quiz2</title>
+    <title>Title</title>
 </head>
 <body>
-NAME: VENKATA PUSHYAHASS REDDY OBULAPU<br>
-ID:1001408522<br>
-UPLOAD FILE:
-<form id="upload_form" action="{{ url_for('upload') }}" method="POST" enctype="multipart/form-data" >
-    <input type="file" name="file" accept="text/csv/image" multiple>
-    <input type="submit" value="Upload File">
+<form id="traffic" action="{{ url_for('traffic') }}" method="POST" enctype="multipart/form-data" >
+<input type="submit" value="Generate Traffic">
 </form>
-<br><br>
-
-<br><br>
-<form id="gap_range" action="{{ url_for('gap_range') }}" method="POST" enctype="multipart/form-data" >
-    Retrieve earthquakes of gap from
-    <input type="text" name="from_gap" accept="text" > To: <input type="text" name="to_gap" accept="text" ><br>
-
-    <input type="submit" value="Retrieve Gap">
-</form>
-<br><br>
-<br><br>
-
-<form id="location" action="{{ url_for('location') }}" method="POST" enctype="multipart/form-data" >
-    List of earthquakes near a particular location
-    <input type="text" name="loc" accept="text" > Range: <input type="text" name="mag" accept="text" ><br>
-    <input type="submit" value="List Earthquakes">
-</form>
-
-
-
 </body>
 </html>
