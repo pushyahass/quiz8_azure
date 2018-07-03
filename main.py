@@ -13,7 +13,7 @@ def index():
 def traffic():
 
     # url = "http://quiz8-env.3ftfvmwv4e.us-east-2.elasticbeanstalk.com/"
-    for i in range(0, 1000):
+    for i in range(0, 1500):
         # subprocess.urllib.urlopen("http://quiz8-env.3ftfvmwv4e.us-east-2.elasticbeanstalk.com/")
         x = urllib.request.urlopen("http://quiz8-env.3ftfvmwv4e.us-east-2.elasticbeanstalk.com/")
         # subprocess.Popen("http://quiz8-env.3ftfvmwv4e.us-east-2.elasticbeanstalk.com/", shell=True)
